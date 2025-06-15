@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resumo HTML - Iframe</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    h1, h2, h3 {
+      color: #2c3e50;
+    }
+    pre {
+      background-color: #eee;
+      padding: 10px;
+      overflow-x: auto;
+      border-left: 3px solid #ccc;
+    }
+    code {
+      background-color: #e8e8e8;
+      padding: 2px 4px;
+      border-radius: 4px;
+    }
+    iframe {
+      display: block;
+      margin: 20px 0;
+      max-width: 100%;
+      border: none;
+    }
+    ul {
+      margin-left: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Resumo HTML – Iframe</h1>
+
+  <section>
+    <h2>O que é a tag <code>&lt;iframe&gt;</code>?</h2>
+    <p>A tag <code>&lt;iframe&gt;</code> é usada para incorporar outro site, vídeo, documento ou página HTML dentro da sua própria página. É como uma "janela" que mostra outro conteúdo.</p>
+  </section>
+
+  <section>
+    <h2>📌 Sintaxe básica</h2>
+    <pre><code>&lt;iframe src="URL" width="600" height="400"&gt;&lt;/iframe&gt;</code></pre>
+    <p>O atributo <code>src</code> define o conteúdo que será carregado dentro do iframe.</p>
+  </section>
+
+  <section>
+    <h2>🎬 Exemplo 1: Incorporando um vídeo do YouTube</h2>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+      title="Vídeo do YouTube" allowfullscreen></iframe>
+
+    <pre><code>&lt;iframe src="https://www.youtube.com/embed/ID-do-video"
+  width="560" height="315" allowfullscreen&gt;&lt;/iframe&gt;</code></pre>
+  </section>
+
+  <section>
+    <h2>🧩 Exemplo 2: Mostrando outra página HTML</h2>
+    <p>Se você tiver um arquivo chamado <code>outra-pagina.html</code> no mesmo projeto, pode incorporá-lo assim:</p>
+
+    <iframe src="outra-pagina.html" width="100%" height="300"></iframe>
+
+    <pre><code>&lt;iframe src="outra-pagina.html" width="100%" height="300"&gt;&lt;/iframe&gt;</code></pre>
+  </section>
+
+  <section>
+    <h2>🎨 Estilizando o iframe</h2>
+    <p>Você pode personalizar o iframe com CSS para deixá-lo mais responsivo:</p>
+
+    <pre><code>iframe {
+  border: none;
+  max-width: 100%;
+}</code></pre>
+  </section>
+
+  <section>
+    <h2>⚠️ Cuidados com o uso de iframes</h2>
+    <ul>
+      <li>Alguns sites bloqueiam ser exibidos em iframes por segurança.</li>
+      <li>Use com moderação, pois podem impactar a performance ou usabilidade.</li>
+      <li>Evite usar iframes para conteúdos essenciais da navegação do site.</li>
+    </ul>
+  </section>
+
+</body>
+</html>
