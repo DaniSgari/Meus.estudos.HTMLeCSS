@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resumo HTML – Output em Formulários</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 850px;
+      margin: 0 auto;
+      padding: 20px;
+      background: #f9f9f9;
+      color: #333;
+    }
+
+    h1, h2, h3 {
+      color: #2c3e50;
+    }
+
+    section {
+      margin-bottom: 40px;
+    }
+
+    form {
+      background: #fff;
+      border: 1px solid #ccc;
+      padding: 15px;
+    }
+
+    label {
+      display: block;
+      margin: 10px 0 5px;
+      font-weight: bold;
+    }
+
+    input[type="range"],
+    input[type="number"] {
+      width: 200px;
+      margin-bottom: 15px;
+    }
+
+    output {
+      display: inline-block;
+      margin-left: 10px;
+      font-weight: bold;
+      background: #eee;
+      padding: 4px 8px;
+      border-radius: 4px;
+    }
+
+    code {
+      background: #eaeaea;
+      padding: 2px 4px;
+      border-radius: 4px;
+    }
+
+    pre {
+      background-color: #eee;
+      padding: 10px;
+      border-left: 3px solid #ccc;
+      overflow-x: auto;
+    }
+     nav a {
+      text-decoration: none;
+      color: #cecfd0;
+      background-color: #333;
+      padding: 2px;
+    }
+  </style>
+</head>
+<body>
+    <nav>
+        <a href="../pag5.html">Voltar a pagina de Formulários</a>
+    </nav>
+
+  <h1>Resumo HTML – Uso da tag <code>&lt;output&gt;</code> em Formulários</h1>
+
+  <section>
+    <h2>1. O que é a tag <code>&lt;output&gt;</code>?</h2>
+    <p>
+      A tag <code>&lt;output&gt;</code> é usada para <strong>exibir resultados calculados</strong> dentro de um formulário.
+      Ela pode ser atualizada por JavaScript ou conectada a campos de entrada via atributos como <code>for</code>.
+    </p>
+  </section>
+
+  <section>
+    <h2>2. Exemplo com <code>input range</code></h2>
+    <form oninput="resultado.value=slider.value">
+      <label for="slider">Escolha um valor:</label>
+      <input type="range" id="slider" name="slider" min="0" max="100" value="50">
+      <output name="resultado" for="slider">50</output>
+    </form>
+
+    <pre><code>&lt;form oninput="resultado.value=slider.value"&gt;
+  &lt;input type="range" id="slider" name="slider" value="50"&gt;
+  &lt;output name="resultado" for="slider"&gt;50&lt;/output&gt;
+&lt;/form&gt;</code></pre>
+  </section>
+
+  <section>
+    <h2>3. Exemplo de soma de dois números</h2>
+    <form oninput="res.value = parseInt(a.value) + parseInt(b.value)">
+      <label for="a">Número A:</label>
+      <input type="number" id="a" name="a" value="0">
+
+      <label for="b">Número B:</label>
+      <input type="number" id="b" name="b" value="0">
+
+      <p>Resultado: <output name="res" for="a b">0</output></p>
+    </form>
+
+    <pre><code>&lt;form oninput="res.value = parseInt(a.value) + parseInt(b.value)"&gt;
+  &lt;input type="number" name="a"&gt;
+  &lt;input type="number" name="b"&gt;
+  &lt;output name="res" for="a b"&gt;0&lt;/output&gt;
+&lt;/form&gt;</code></pre>
+  </section>
+
+  <section>
+    <h2>4. Explicação dos atributos</h2>
+    <ul>
+      <li><code>name</code>: identifica o output no script</li>
+      <li><code>for</code>: indica de quais inputs o output depende</li>
+      <li><code>oninput</code>: executa uma ação toda vez que o formulário sofre mudança</li>
+    </ul>
+  </section>
+  <section>
+    <h1>Calculadora de Idade</h1>
+
+  <form oninput="idade.value = (new Date().getFullYear() - nascimento.value)">
+    <label for="nascimento">Ano de nascimento:</label>
+    <input type="number" id="nascimento" name="nascimento" min="1900" max="2100" value="2000" />
+
+    <div class="resultado">
+      Sua idade é: <output name="idade" for="nascimento">0</output> anos
+    </div>
+  </section>
+
+</body>
+</html>
