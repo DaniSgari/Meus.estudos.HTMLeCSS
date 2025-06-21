@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Resumo CSS – Media Queries</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+      background: #f9f9f9;
+      color: #333;
+    }
+
+    h1, h2, h3 {
+      color: #2c3e50;
+    }
+
+    section {
+      margin-bottom: 40px;
+    }
+
+    .caixa {
+      width: 100%;
+      height: 100px;
+      background-color: steelblue;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      border-radius: 8px;
+    }
+
+    @media (max-width: 768px) {
+      .caixa {
+        background-color: tomato;
+        font-size: 20px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .caixa {
+        background-color: seagreen;
+        font-size: 16px;
+      }
+    }
+
+    code {
+      background: #eaeaea;
+      padding: 2px 5px;
+      border-radius: 4px;
+    }
+
+    pre {
+      background-color: #eee;
+      padding: 10px;
+      border-left: 3px solid #ccc;
+      overflow-x: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Resumo CSS – Media Queries</h1>
+
+  <section>
+    <h2>1. O que são Media Queries?</h2>
+    <p>
+      <strong>Media queries</strong> são regras do CSS que permitem aplicar estilos diferentes com base em características do dispositivo, como:
+    </p>
+    <ul>
+      <li>Largura da tela</li>
+      <li>Altura da tela</li>
+      <li>Orientação (paisagem ou retrato)</li>
+      <li>Resolução, entre outros</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>2. Sintaxe básica</h2>
+    <pre><code>@media (condição) {
+  /* estilos aplicados se a condição for verdadeira */
+}</code></pre>
+
+    <p>Exemplo:</p>
+    <pre><code>@media (max-width: 768px) {
+  body {
+    background-color: lightgray;
+  }
+}</code></pre>
+  </section>
+
+  <section>
+    <h2>3. Exemplo prático com uma div</h2>
+    <div class="caixa">Caixa Responsiva</div>
+
+    <p>
+      Essa caixa muda de cor e tamanho do texto com base na largura da tela:
+    </p>
+
+    <ul>
+      <li><code>&gt; 768px</code>: azul</li>
+      <li><code>&lt;= 768px</code>: vermelho</li>
+      <li><code>&lt;= 480px</code>: verde</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>4. Tipos mais usados de media query</h2>
+    <ul>
+      <li><code>max-width</code> – aplica estilo até certo tamanho</li>
+      <li><code>min-width</code> – aplica estilo a partir de certo tamanho</li>
+      <li><code>orientation</code> – paisagem ou retrato</li>
+      <li><code>screen</code> – tipo de mídia (tela, impressão, etc.)</li>
+    </ul>
+    <pre><code>@media screen and (orientation: portrait) {
+  /* Aplica estilos em modo retrato */
+}</code></pre>
+  </section>
+
+  <section>
+    <h2>5. Boas práticas</h2>
+    <ul>
+      <li>Use <code>min-width</code> para design "mobile-first"</li>
+      <li>Organize suas media queries no final do CSS ou por componente</li>
+      <li>Evite usar valores fixos em pixels; prefira %, vw/vh ou rem</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>6. Breakpoints comuns</h2>
+    <pre><code>/* Telas pequenas (celular) */
+@media (max-width: 480px) { ... }
+
+/* Telas médias (tablet) */
+@media (max-width: 768px) { ... }
+
+/* Telas grandes (desktop) */
+@media (max-width: 1024px) { ... }</code></pre>
+  </section>
+
+</body>
+</html>
