@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Resumo HTML - Regex (Expressões Regulares)</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+      background: #f4f4f4;
+      color: #333;
+    }
+    h1, h2, h3 {
+      color: #2c3e50;
+    }
+    section {
+      margin-bottom: 40px;
+    }
+    pre {
+      background-color: #eee;
+      padding: 10px;
+      overflow-x: auto;
+      border-left: 3px solid #ccc;
+    }
+    code {
+      background: #eaeaea;
+      padding: 2px 5px;
+      border-radius: 4px;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      background: #fff;
+    }
+    table, th, td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: left;
+    }
+    input {
+      display: block;
+      padding: 8px;
+      margin-top: 5px;
+      margin-bottom: 15px;
+      width: 100%;
+      max-width: 400px;
+    }
+    form {
+      background: #fff;
+      padding: 15px;
+      border: 1px solid #ccc;
+    }
+    ul {
+      list-style: disc;
+      margin-left: 20px;
+    }
+    nav a {
+      text-decoration: none;
+      color: #cecfd0;
+      background-color: #333;
+      padding: 2px;
+    }
+  </style>
+</head>
+<body>
+    <nav><a href="pag5.html">voltar para Formulários</a></nav>
+
+  <h1>Resumo: Regex – Expressões Regulares</h1>
+
+  <section>
+    <h2>1. O que é Regex?</h2>
+    <p>
+      <strong>Regex</strong> (abreviação de <em>Regular Expression</em> ou expressão regular) é uma linguagem para
+      <strong>identificar padrões em textos</strong>. Você pode usar regex para:
+    </p>
+    <ul>
+      <li>Validar campos em formulários (email, CPF, senha, etc)</li>
+      <li>Buscar palavras ou formatos específicos em textos</li>
+      <li>Substituir ou extrair partes de um conteúdo</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>2. Como usar Regex no HTML</h2>
+    <p>Você pode usar regex no HTML por meio do atributo <code>pattern</code> dentro de um <code>&lt;input&gt;</code>.</p>
+
+    <h3>Exemplo – CEP no formato 00000-000:</h3>
+    <form>
+      <label for="cep">CEP:</label>
+      <input type="text" id="cep" name="cep" pattern="\d{5}-\d{3}" required placeholder="00000-000" />
+      <button type="submit">Validar</button>
+    </form>
+
+    <pre><code>&lt;input type="text" pattern="\d{5}-\d{3}" required&gt;</code></pre>
+
+    <p>Esse campo só será aceito se o valor digitado seguir o padrão <strong>5 dígitos + hífen + 3 dígitos</strong>.</p>
+  </section>
+
+  <section>
+    <h2>3. Símbolos básicos do Regex</h2>
+    <table>
+      <thead>
+        <tr><th>Símbolo</th><th>Significado</th><th>Exemplo</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><code>.</code></td><td>Qualquer caractere</td><td><code>a.c</code> → "abc", "a9c", "a-c"</td></tr>
+        <tr><td><code>\d</code></td><td>Um número (0 a 9)</td><td><code>\d\d</code> → "23", "05"</td></tr>
+        <tr><td><code>\w</code></td><td>Letra, número ou _</td><td><code>\w+</code> → "texto_123"</td></tr>
+        <tr><td><code>\s</code></td><td>Espaço em branco</td><td><code>a\sc</code> → "a c"</td></tr>
+        <tr><td><code>^</code></td><td>Início do texto</td><td><code>^Olá</code> → só aceita se começar com "Olá"</td></tr>
+        <tr><td><code>$</code></td><td>Fim do texto</td><td><code>fim$</code> → só aceita se terminar com "fim"</td></tr>
+        <tr><td><code>{n}</code></td><td>Exatamente n repetições</td><td><code>\d{2}</code> → dois dígitos</td></tr>
+        <tr><td><code>{n,}</code></td><td>n ou mais repetições</td><td><code>\d{3,}</code> → três ou mais dígitos</td></tr>
+        <tr><td><code>[abc]</code></td><td>Um dos caracteres</td><td><code>[aeiou]</code> → vogais</td></tr>
+        <tr><td><code>( )</code></td><td>Agrupar</td><td><code>(ab)+</code> → "ab", "abab", "ababab"</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>4. Exemplos práticos</h2>
+
+    <h3>✅ Email válido:</h3>
+    <pre><code>pattern="^[\w\.-]+@[\w\.-]+\.\w{2,}$"</code></pre>
+
+    <h3>✅ Apenas números:</h3>
+    <pre><code>pattern="^\d+$"</code></pre>
+
+    <h3>✅ Senha com pelo menos 6 caracteres e 1 número:</h3>
+    <pre><code>pattern="^(?=.*\d).{6,}$"</code></pre>
+
+    <h3>✅ Somente letras (com acentos e espaços):</h3>
+    <pre><code>pattern="^[A-Za-zÀ-ú\s]+$"</code></pre>
+  </section>
+
+  <section>
+    <h2>5. Teste ao vivo</h2>
+    <form>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" pattern="^[\w\.-]+@[\w\.-]+\.\w{2,}$" required placeholder="seu@email.com"/>
+
+      <label for="senha">Senha (mín. 6 caract., 1 número):</label>
+      <input type="password" id="senha" name="senha" pattern="^(?=.*\d).{6,}$" required />
+
+      <button type="submit">Testar</button>
+    </form>
+  </section>
+
+</body>
+</html>

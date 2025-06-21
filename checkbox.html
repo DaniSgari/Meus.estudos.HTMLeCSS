@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Resumo HTML – Checkbox</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 850px;
+      margin: 0 auto;
+      padding: 20px;
+      background: #f9f9f9;
+      color: #333;
+    }
+
+    h1, h2, h3 {
+      color: #2c3e50;
+    }
+
+    form {
+      background: #fff;
+      border: 1px solid #ccc;
+      padding: 15px;
+      margin-bottom: 30px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+      cursor: pointer;
+    }
+
+    code {
+      background-color: #eaeaea;
+      padding: 2px 5px;
+      border-radius: 4px;
+    }
+
+    pre {
+      background-color: #eee;
+      padding: 10px;
+      border-left: 3px solid #ccc;
+      overflow-x: auto;
+    }
+     nav a {
+      text-decoration: none;
+      color: #cecfd0;
+      background-color: #333;
+      padding: 2px;
+      margin: auto;
+    }
+  </style>
+</head>
+<body>
+    <nav><a href="pag5.html">voltar para Formulários</a></nav>
+  <h1>Resumo HTML – Checkboxes</h1>
+
+  <section>
+    <h2>1. O que é um checkbox?</h2>
+    <p>
+      Um <strong>checkbox</strong> (caixa de seleção) permite que o usuário <strong>selecione uma ou mais opções</strong> em um formulário.
+    </p>
+    <p>Ele é criado com a tag <code>&lt;input type="checkbox"&gt;</code>.</p>
+  </section>
+
+  <section>
+    <h2>2. Exemplo básico</h2>
+    <form>
+      <label>
+        <input type="checkbox" name="opcao1" /> Aceito os termos de uso
+      </label>
+    </form>
+
+    <pre><code>&lt;input type="checkbox" name="opcao1"&gt; Aceito os termos</code></pre>
+  </section>
+
+  <section>
+    <h2>3. Várias opções (grupo de checkboxes)</h2>
+    <p>
+      Você pode usar vários checkboxes com o <strong>mesmo name (como array)</strong> ou nomes diferentes, dependendo do envio.
+    </p>
+    <form>
+      <label>
+        <input type="checkbox" name="interesses" value="html" /> HTML
+      </label>
+      <label>
+        <input type="checkbox" name="interesses" value="css" /> CSS
+      </label>
+      <label>
+        <input type="checkbox" name="interesses" value="js" /> JavaScript
+      </label>
+    </form>
+
+    <pre><code>&lt;input type="checkbox" name="interesses" value="html"&gt; HTML
+&lt;input type="checkbox" name="interesses" value="css"&gt; CSS
+&lt;input type="checkbox" name="interesses" value="js"&gt; JavaScript</code></pre>
+  </section>
+
+  <section>
+    <h2>4. Atributos úteis em checkbox</h2>
+    <ul>
+      <li><code>name</code> – nome do campo (usado no envio dos dados)</li>
+      <li><code>value</code> – valor que será enviado se o checkbox for marcado</li>
+      <li><code>checked</code> – define o checkbox como marcado por padrão</li>
+      <li><code>disabled</code> – desativa o checkbox</li>
+      <li><code>required</code> – exige que pelo menos um

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Resumo HTML – Radio</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 850px;
+      margin: 0 auto;
+      padding: 20px;
+      background: #f4f4f4;
+      color: #333;
+    }
+
+    h1, h2, h3 {
+      color: #2c3e50;
+    }
+
+    form {
+      background: #fff;
+      border: 1px solid #ccc;
+      padding: 15px;
+      margin-bottom: 30px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+      cursor: pointer;
+    }
+
+    code {
+      background-color: #eaeaea;
+      padding: 2px 5px;
+      border-radius: 4px;
+    }
+
+    pre {
+      background-color: #eee;
+      padding: 10px;
+      border-left: 3px solid #ccc;
+      overflow-x: auto;
+    }
+
+    ul {
+      list-style: disc;
+      margin-left: 20px;
+    }
+     nav a {
+      text-decoration: none;
+      color: #cecfd0;
+      background-color: #333;
+      padding: 2px;
+      margin: auto;
+    }
+  </style>
+</head>
+<body>
+    <nav><a href="pag5.html">voltar para Formulários</a></nav>
+  <h1>Resumo HTML – Radio</h1>
+
+  <section>
+    <h2>1. O que é um botão <code>radio</code>?</h2>
+    <p>
+      O botão do tipo <strong>radio</strong> permite ao usuário <strong>selecionar apenas uma opção</strong> entre várias disponíveis.
+    </p>
+    <p>
+      Ele é criado com a tag <code>&lt;input type="radio"&gt;</code> e todas as opções que pertencem ao mesmo grupo devem ter o mesmo atributo <code>name</code>.
+    </p>
+  </section>
+
+  <section>
+    <h2>2. Exemplo básico</h2>
+    <form>
+      <label>
+        <input type="radio" name="genero" value="feminino" /> Feminino
+      </label>
+      <label>
+        <input type="radio" name="genero" value="masculino" /> Masculino
+      </label>
+      <label>
+        <input type="radio" name="genero" value="outro" /> Outro
+      </label>
+    </form>
+
+    <pre><code>&lt;input type="radio" name="genero" value="feminino"&gt;
+&lt;input type="radio" name="genero" value="masculino"&gt;
+&lt;input type="radio" name="genero" value="outro"&gt;</code></pre>
+  </section>
+
+  <section>
+    <h2>3. Regras importantes</h2>
+    <ul>
+      <li>Todos os <code>radio</code> com o mesmo <code>name</code> formam um grupo</li>
+      <li>Apenas <strong>uma opção</strong> pode ser selecionada por grupo</li>
+      <li>O atributo <code>checked</code> pode ser usado para definir uma opção marcada por padrão</li>
+      <li>O atributo <code>required</code> obriga o usuário a escolher uma das opções</li>
+    </ul>
+
+    <h3>Exemplo com <code>checked</code> e <code>required</code>:</h3>
+    <form>
+      <label><input type="radio" name="turno" value="manha" checked /> Manhã</label>
+      <label><input type="radio" name="turno" value="tarde" /> Tarde</label>
+      <label><input type="radio" name="turno" value="noite" required /> Noite</label>
+    </form>
+  </section>
+
+  <section>
+    <h2>4. Diferença entre <code>radio</code> e <code>checkbox</code></h2>
+    <ul>
+      <li><strong>Radio</strong>: só uma opção pode ser escolhida</li>
+      <li><strong>Checkbox</strong>: várias opções podem ser marcadas</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>5. Agrupando opções com <code>&lt;fieldset&gt;</code> e <code>&lt;legend&gt;</code></h2>
+    <form>
+      <fieldset>
+        <legend>Escolha sua forma de pagamento:</legend>
+        <label><input type="radio" name="pagamento" value="cartao" /> Cartão</label>
+        <label><input type="radio" name="pagamento" value="boleto" /> Boleto</label>
+        <label><input type="radio" name="pagamento" value="pix" /> Pix</label>
+      </fieldset>
+    </form>
+  </section>
+
+  <section>
+    <h2>6. Resumo das tags usadas</h2>
+    <ul>
+      <li><code>&lt;input type="radio"&gt;</code> – cria o botão de seleção única</li>
+      <li><code>&lt;label&gt;</code> – melhora a acessibilidade e permite clicar no texto</li>
+      <li><code>&lt;fieldset&gt;</code> e <code>&lt;legend&gt;</code> – organizam grupos de opções</li>
+      <li><code>name</code> – obrigatório para o agrupamento</li>
+      <li><code>value</code> – valor enviado quando a opção é selecionada</li>
+      <li><code>checked</code> – pré-seleciona uma opção</li>
+      <li><code>required</code> – exige que uma das opções seja marcada</li>
+    </ul>
+  </section>
+
+</body>
+</html>

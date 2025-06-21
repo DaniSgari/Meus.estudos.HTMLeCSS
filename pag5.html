@@ -16,6 +16,16 @@
     h1, h2, h3 {
       color: #2c3e50;
     }
+    nav a {
+      color: #eee;
+      background-color: #666;
+      text-decoration: none;
+      padding: 10px;
+    }
+    nav a:hover {
+      
+      background-color: #2a2a2a;
+    }
     pre {
       background-color: #eee;
       padding: 10px;
@@ -47,8 +57,17 @@
   </style>
 </head>
 <body>
+  
+  <header>
+    <h1>Resumo HTML – Formulários</h1>
+     <nav>
+       <a href="index.html">VOLTAR PARA INICIO</a>
+       <a href="redex.html">RedEx</a>
+       <a href="checkbox.html">Checkbox</a>
+       <a href="radio.html">Radio</a>
+     </nav>
+  </header>
 
-  <h1>Resumo HTML – Formulários</h1>
 
   <section>
     <h2>1. O que é um formulário?</h2>
@@ -310,6 +329,44 @@
     Também pode aplicar no formulário inteiro:
   </p>
   <pre><code>&lt;form autocomplete="off"&gt;...&lt;/form&gt;</code></pre>
+</section>
+<section>
+  <h2>14. Agrupando campos com <code>&lt;fieldset&gt;</code> e <code>&lt;legend&gt;</code></h2>
+
+  <p>
+    A tag <code>&lt;fieldset&gt;</code> é usada para <strong>agrupar visualmente e semanticamente</strong> campos relacionados dentro de um formulário.
+  </p>
+  <p>
+    Já a tag <code>&lt;legend&gt;</code> serve como um <strong>título descritivo</strong> para esse grupo.
+  </p>
+
+  <h3>📌 Exemplo prático:</h3>
+  <form>
+    <fieldset>
+      <legend>Informações Pessoais</legend>
+
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" name="nome" required />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required />
+    </fieldset>
+
+    <fieldset>
+      <legend>Preferências</legend>
+
+      <label><input type="checkbox" name="novidades" /> Receber novidades</label><br />
+      <label><input type="checkbox" name="promocoes" /> Receber promoções</label>
+    </fieldset>
+
+    <button type="submit">Enviar</button>
+  </form>
+
+  <pre><code>&lt;fieldset&gt;
+  &lt;legend&gt;Informações Pessoais&lt;/legend&gt;
+  &lt;label&gt;Nome:&lt;/label&gt;
+  &lt;input type="text" name="nome"&gt;
+&lt;/fieldset&gt;</code></pre>
 </section>
 
 
