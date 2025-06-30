@@ -3,143 +3,149 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Resumo CSS – Media Queries</title>
+  <title>Resumo – Tipos de Mídia (Media Types)</title>
   <style>
-    body {
+     body {
       font-family: Arial, sans-serif;
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 20px;
-      background: #f9f9f9;
+      margin: 0;
+      padding: 2rem;
+      background-color: #f4f4f4;
       color: #333;
     }
-
-    h1, h2, h3 {
-      color: #2c3e50;
+    h1, h2 {
+      color: #0b5394;
+    }
+    header {
+      background-color: #e3f2fd;
+      padding: 1rem;
+      border-radius: 8px;
+      margin-bottom: 2rem;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
     }
 
     section {
-      margin-bottom: 40px;
+      margin-bottom: 30px;
     }
 
-    .caixa {
+    table {
       width: 100%;
-      height: 100px;
-      background-color: steelblue;
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 24px;
-      border-radius: 8px;
+      border-collapse: collapse;
+      margin-top: 10px;
     }
 
-    @media (max-width: 768px) {
-      .caixa {
-        background-color: tomato;
-        font-size: 20px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .caixa {
-        background-color: seagreen;
-        font-size: 16px;
-      }
+    th, td {
+      padding: 8px 12px;
+      border: 1px solid #ccc;
+      text-align: left;
     }
 
     code {
-      background: #eaeaea;
+      background: #eee;
       padding: 2px 5px;
       border-radius: 4px;
+      font-family: monospace;
     }
 
     pre {
-      background-color: #eee;
+      background: #eee;
       padding: 10px;
-      border-left: 3px solid #ccc;
       overflow-x: auto;
+      border-left: 3px solid #ccc;
+    }
+     nav a {
+      color: #eee;
+      background-color: #666;
+      text-decoration: none;
+      padding: 10px;
+    }
+    nav a:hover {
+      
+      background-color: #2a2a2a;
     }
   </style>
 </head>
 <body>
+  <nav>
+    <a href="index.html" id="inicio" >VOLTAR PARA INICIO</a>
+  </nav>
 
-  <h1>Resumo CSS – Media Queries</h1>
+  <h1>Resumo: Tipos de Mídia com Media Queries</h1>
 
   <section>
-    <h2>1. O que são Media Queries?</h2>
+    <h2>O que são tipos de mídia?</h2>
     <p>
-      <strong>Media queries</strong> são regras do CSS que permitem aplicar estilos diferentes com base em características do dispositivo, como:
+      Os <strong>tipos de mídia</strong> definem o tipo de dispositivo para o qual o CSS será aplicado. São usados com <code>@media</code> ou no atributo <code>media</code> das tags <code>&lt;link&gt;</code> ou <code>&lt;style&gt;</code>.
     </p>
-    <ul>
-      <li>Largura da tela</li>
-      <li>Altura da tela</li>
-      <li>Orientação (paisagem ou retrato)</li>
-      <li>Resolução, entre outros</li>
-    </ul>
   </section>
 
   <section>
-    <h2>2. Sintaxe básica</h2>
-    <pre><code>@media (condição) {
-  /* estilos aplicados se a condição for verdadeira */
-}</code></pre>
+    <h2>Tipos de mídia mais usados</h2>
+    <table>
+      <tr>
+        <th>Tipo</th>
+        <th>Uso</th>
+      </tr>
+      <tr>
+        <td><code>screen</code></td>
+        <td>Aplica estilos para telas (computadores, celulares, tablets)</td>
+      </tr>
+      <tr>
+        <td><code>print</code></td>
+        <td>Estilos para impressão ou visualização do modo imprimir</td>
+      </tr>
+      <tr>
+        <td><code>all</code></td>
+        <td>Aplica estilos para todos os dispositivos (padrão)</td>
+      </tr>
+      <tr>
+        <td><code>speech</code></td>
+        <td>Leitores de tela ou softwares de voz</td>
+      </tr>
+    </table>
+  </section>
 
-    <p>Exemplo:</p>
-    <pre><code>@media (max-width: 768px) {
+  <section>
+    <h2>Exemplo usando @media</h2>
+    <pre><code>/* Estilo para telas */
+@media screen {
   body {
     background-color: lightgray;
+  }
+}
+
+/* Estilo para impressão */
+@media print {
+  body {
+    background-color: white;
+    color: black;
+  }
+}
+
+/* Estilo para leitores de tela */
+@media speech {
+  h1 {
+    speak: literal-punctuation;
   }
 }</code></pre>
   </section>
 
   <section>
-    <h2>3. Exemplo prático com uma div</h2>
-    <div class="caixa">Caixa Responsiva</div>
-
-    <p>
-      Essa caixa muda de cor e tamanho do texto com base na largura da tela:
-    </p>
-
-    <ul>
-      <li><code>&gt; 768px</code>: azul</li>
-      <li><code>&lt;= 768px</code>: vermelho</li>
-      <li><code>&lt;= 480px</code>: verde</li>
-    </ul>
+    <h2>Exemplo com o atributo <code>media</code> no HTML</h2>
+    <pre><code>&lt;link rel="stylesheet" href="style.css" media="screen"&gt;
+&lt;link rel="stylesheet" href="print.css" media="print"&gt;</code></pre>
   </section>
 
   <section>
-    <h2>4. Tipos mais usados de media query</h2>
+    <h2>Outros tipos de mídia (menos comuns)</h2>
     <ul>
-      <li><code>max-width</code> – aplica estilo até certo tamanho</li>
-      <li><code>min-width</code> – aplica estilo a partir de certo tamanho</li>
-      <li><code>orientation</code> – paisagem ou retrato</li>
-      <li><code>screen</code> – tipo de mídia (tela, impressão, etc.)</li>
+      <li><code>braille</code> – dispositivos táteis para leitura</li>
+      <li><code>embossed</code> – impressoras braille</li>
+      <li><code>handheld</code> – dispositivos portáteis antigos</li>
+      <li><code>projection</code> – projetores (ex: slides)</li>
+      <li><code>tty</code> – terminais de texto (sem imagem)</li>
+      <li><code>tv</code> – navegadores de TV</li>
     </ul>
-    <pre><code>@media screen and (orientation: portrait) {
-  /* Aplica estilos em modo retrato */
-}</code></pre>
-  </section>
-
-  <section>
-    <h2>5. Boas práticas</h2>
-    <ul>
-      <li>Use <code>min-width</code> para design "mobile-first"</li>
-      <li>Organize suas media queries no final do CSS ou por componente</li>
-      <li>Evite usar valores fixos em pixels; prefira %, vw/vh ou rem</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>6. Breakpoints comuns</h2>
-    <pre><code>/* Telas pequenas (celular) */
-@media (max-width: 480px) { ... }
-
-/* Telas médias (tablet) */
-@media (max-width: 768px) { ... }
-
-/* Telas grandes (desktop) */
-@media (max-width: 1024px) { ... }</code></pre>
+    <p><strong>⚠️ Importante:</strong> Esses tipos são pouco usados hoje em dia. Os mais relevantes são <code>screen</code>, <code>print</code> e <code>all</code>.</p>
   </section>
 
 </body>
